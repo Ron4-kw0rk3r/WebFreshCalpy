@@ -1,0 +1,13 @@
+x1 {
+    width: 100px;
+    height: 100px;
+    background: rgb(93, 218, 197);
+    position: relative;
+    animation: atila infinite;
+    animation-duration: 3s;
+}
+@keyframes atila{
+    from {top: 10px;}
+    to {top: 200px;}
+}
+  

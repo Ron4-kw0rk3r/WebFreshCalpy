@@ -1,0 +1,158 @@
+<!-- render_template function answer off time solution -->
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="author" content="Bryan Ronaldo">
+        <meta name="viewport" content="widht=device=width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Trirong">
+        <!-- <link rel="stylesheet" href="static/styler.css"> -->
+        <link rel="stylesheet" href="static/stylerr.css">
+        <title> ANSWER RESOLVER </title>
+        <style>
+            body{ color: #f1f1f1;
+                margin: 40px;
+                background-color: #000000;
+                font-family: "Trirong";
+            }
+
+            div{
+                widht: 2px;
+                height: 1px;
+                background-color: yellow;
+                position: absolute;
+                animation-name: theme;
+                animation-duration: 6s;
+                animation-timing-function: linear;
+                animation-delay: 2s;
+                animation-iteration-count: infinite;
+                animation-direction: alternate;
+                display: block;
+
+                /* animation: theme 5s linear  4s inifinite alternate; */
+
+            }
+            @keyframes theme {
+
+            0% {background-color:cyan; right:0px; top:0px;}
+            25% {background-color:yellow; left:200px; top:100px;}
+            35% {background-color: green ; right:200px; top:100px;}
+            55% {background-color: cyan; right:0px; top:110px;}
+            75% {background-color: cyan; left: 0px ; top:0px;}
+            87% {background-color: yellow; left: 100px ; top: 100px;}
+            100% {background-color: cyan; left: 0px; top: 100px;}
+
+            }
+            
+            
+            input{
+                color: #000000;
+				font-size: 25px;
+				border: none;
+				font: arial;
+				
+				width: 300px;
+				height: 50px;
+				border-radius: 9px;
+            }
+            
+            input[type=submit]{
+                color: #f1f1f1;
+	            background-color:  #F10000;
+	            font-size: 26px;
+	            border: none;
+	            font: arial;
+	            width: 220px;
+	            height: 40px;
+	            padding: 400 400px;
+	            cursor: pointer;
+	            font: arial;
+            }
+            input[type=submit]:hover{
+                color: rgb(255, 255, 255);
+	            background-color: rgba(117, 241, 200);
+            }
+        </style>
+    </head>
+    <body>
+        <center><h1> calculator </h1> </center>
+        <section class="clubsters">
+            <form action="/clubsters"  method="POST">
+                <label for="data"> Entrada de Valores :  </label>
+                <p><center> <input  placeholder="value" name="value_1" /></center>  </p>
+                
+                <p> <center> <input type="submit" value="evaluador" id="calc_eval" class="btn"  /> </center> </p>
+                <br>
+                <h3> this is result: </h3>
+                <h3> <center> {{ result }} </center> </h3>
+            </form>
+        </section>
+        
+        
+        <section class="strangerman">
+            <form action="/strangerman" method="POST">
+                <label for="raiz_make"> Entrada raiz : </label>
+                <p> <center> <input type='number' placeholder="raiz" name="sq_raiz" /> </center> </p>
+                <p> <center> <input type="submit" name="resolv" id="calc_raiz" class="btn" /> </p>
+                <br>
+                <h3> this is result: </h3>
+                <h3> <center> {{ ravengold }} </center> </h3>
+                
+            </form>
+        </section> 
+
+        <section class="integrals">
+            <form action="/integrals" method="POST">
+                <label for=complex> Entrada integral </label>
+                <p> <center> <input placeholder="integral" name="ingral_1" /> </center> </p>
+                <p> <center> <input type="submit" value="integral" id="valuer" class="btn">
+                <select name="verify">
+                    <option value="integral"> integral </option>
+                    <option value="derivate"> derivada </option>
+                </select>
+                <br>
+                <h2> this is result: </h2>
+                <h3>  {{ hoolview }} </h3>
+            </form>
+        </section>
+        <section class="limits">
+            <form action="/limits" method="POST">
+                <label for=limon> Entrada integral </label>
+                <p> 
+                    <center> 
+                        <input placeholder="limite" name="limited_1" /> 
+                        <input placeholder="x or y or t" name="xam">
+                        <input placeholder="  ? ---> num or 00" name="fin_xam" >
+
+                    </center> 
+                </p>
+                <br>
+                <h2> this is result: </h2>
+                <p> <center> <input type="submit" value="limited" id="valuer" class="btn">
+                <h3>  {{ limview }} </h3>
+
+            </form>
+        </section>
+        <section class="matrix">
+            <form action="/matrix" method="POST">
+                <label for="input_cmatrix"> datos matris </label>
+                <p>
+                    <center> 
+                        <input type="#" placeholder="line" name="linea" />
+                        <input type="#" placeholder="column" name="columna" />
+                    </center>
+                </p>    
+                <label for="comp_matrix"> valores de matris </label> 
+                <p>
+                    <center>
+                        <input type="#" placeholder="[valores, valores]" name=matrix />
+                    </center>
+                </p>
+                <p> <center> <input type="submit" value="matrixrex" id="math" class="btn"> </center> </p>
+                <center> <h2> {{ solvmatrix }} </h2> </center>
+            </form>
+        </section>  
+        
+        <div> </div>
+    </body>    
+</html>
