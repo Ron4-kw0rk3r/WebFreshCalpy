@@ -87,11 +87,18 @@ def diclivs(reguet_declivs):
     sym.init_printing(True)
     reincibilization = "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
     complement = pprint(str(sym.Derivative(reguet_declivs)), use_unicode=False)
-    complement =pprint(sym.Derivative(reguet_declivs), use_unicode=True)
+    # complement =pprint(sym.Derivative(reguet_declivs), use_unicode=True)
+    print(f'{reincibilization}')
     for a in range(0, 1):
         time.sleep(0.1)
         complement=pprint(sym.diff(reguet_declivs), use_unicode=True)
-        sys.exit(0)
+        with open("fixhtml/output1.txt", 'w') as  dif:
+            dif.write('\n')
+            with redirect_stdout(dif):
+                complement = pprint(str(sym.Derivative(reguet_declivs)), use_unicode=False)
+                complement =(print('\n'))
+                complement = pprint(sym.diff(reguet_declivs), use_unicode=True)
+        # sys.exit(0)
     # complement.doit()
 def limitation(reguet_limon, reguet_val, reguet_fusse):
     x, y, z = sym.symbols('x, y, z')
@@ -105,8 +112,17 @@ def limitation(reguet_limon, reguet_val, reguet_fusse):
     print(f'{reems}')
     for s in range(0, 1):
         time.sleep(0.1)
-        ument = pprint(sym.limit(reguet_limon, reguet_val, reguet_fusse), use_unicode=True)
-        sys.exit(0)
+        # ument = pprint(sym.limit(reguet_limon, reguet_val, reguet_fusse), use_unicode=True)
+        with open("fixhtml/output2.txt",  'w') as limcow:
+            limcow.write('\n')
+            with redirect_stdout(limcow):
+                ument =  pprint(str(sym.Limit(reguet_limon , reguet_val, reguet_fusse)), use_unicode=False)
+                umnet = (print('\n'))
+                ument = pprint(sym.Limit(reguet_limon, reguet_val, reguet_fusse), use_unicode=True)
+                ument = (print('\n'))
+                ument = pprint(sym.limit(reguet_limon , reguet_val, reguet_fusse), use_unicode=True)
+
+        # sys.exit(0)
     #complement =pprint(sym.Integrate(reguet_limited), use_unicode=False)
     # complement.doit()
 

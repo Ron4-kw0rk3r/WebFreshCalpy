@@ -6,6 +6,8 @@
 # from unittest import result
 # from crypt import methods
 from crypt import methods
+from operator import index
+from turtle import home
 import flask
 from flask import Flask , render_template
 from flask import request, jsonify
@@ -22,7 +24,8 @@ from sympy import *
 from sympy.abc import *
 from sympy.parsing.sympy_parser import *
 from brainsolver import diferentials
-
+from brainsolver import diclivs
+from brainsolver import limitation
 # how fix import text str in parser render template host in code sussesfully
 # again imported code alll seeder 
 import os 
@@ -40,11 +43,11 @@ def main():
 
 
 
-@app.route('/redirect', methods=["GET, POST"])
-def redirect():
+@app.route('/acesspoint', methods=["POST"])
+def acesspoint():
     if request.method == "POST":
-        obster = request.form["Get Fresh"]
         return render_template("index.html")
+        # obster = request.form["Get Fresh"]
 
 
 
@@ -101,21 +104,26 @@ def derivate():
             # buildman_cont = buildman.read()
                 dumpyf = exm.read()
 
-@app.route('/limited', methods=["POST"])
+@app.route('/limits', methods=["POST"])
 
-def limited():
+def limits():
     if request.method == "POST":
         composer = request.form["limited_1"]
         limon = request.form["xam"]
         strapp = request.form["fin_xam"]
-        voold =  request.form["limview"]
+        # lomvid =  request.form["limited"]
 
-        aproved = diferentials(composer)
-        with open("fixhtml/output2.txt", 'r') as buildman:
+        blimiteder = limitation(composer , limon, strapp)
+        with open("fixhtml/output2.txt", 'r') as limonman:
+            for  zlab in  limonman:
+                lim_conf = limonman.read()
+
+
+        if composer:
+            return render_template("index.html", limview1=lim_conf)
             
+        
             # buildman_cont = buildman.read()
-            for  exm in  buildman:
-                dumpyf = exm.read()
 
 
 
@@ -127,10 +135,17 @@ def integrals():
 
         aproved = diferentials(composer)
         with open("fixhtml/output.txt", 'r') as buildman:
-            
-            # buildman_cont = buildman.read()
-            for  exm in  buildman:
-                dumpyf = exm.read()
+            for tm in buildman:
+                buildman_cont = buildman.read()
+
+
+
+        recreater = diclivs(composer)
+        with open("fixhtml/output1.txt", "r") as mandeclif:
+            for bui in mandeclif:
+                derivman_conf = mandeclif.read()
+            # for  exmdiclivs in  buildman:
+                # dumpyf = exm.readline()
                 # print(exm)
             # buildman = open("fixhtml/output.txt", 'r')
         
@@ -167,10 +182,10 @@ def integrals():
         #     pass
 
         if  voold == "integral":
-            return render_template('index.html', hoolview=dumpyf)
+            return render_template('index.html', hoolview=str(buildman_cont))
             # return render_template('index.html', hoolview=dumpfy)
         elif voold == "derivate":
-            return render_template('index.html', hoolview=composer)
+            return render_template('index.html', hoolview=str(derivman_conf))
        
         else:
             return render_template('error.html')
@@ -200,5 +215,5 @@ if __name__ == "__main__":
     clubsters()
     strangerman()
     main()
-    redirect()
+    acesspoint()
     # pass
