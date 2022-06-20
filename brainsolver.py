@@ -126,6 +126,27 @@ def limitation(reguet_limon, reguet_val, reguet_fusse):
     #complement =pprint(sym.Integrate(reguet_limited), use_unicode=False)
     # complement.doit()
 
+
+
+def cmetrix(cm_line, cm_col, cm_val):
+    x , y ,z = sym.symbols('x, y ,z')
+    w , t , u = sym.symbols('w, t ,u')
+    k, m , n = sym.symbols('k m n' ,integer=True)
+    f, g , h = sym.symbols('f, g, h')
+    sym.init_printing(True)
+    
+    cmatr = pprint(sym.Matrix([cm_val]))
+    for a in range(0, 1):
+        time.slepp(0.2)
+        with open("fixhtml/matrix.txt", 'w') as cmati:
+            cmati.write('\n')
+            with redirect_stdout(cmati):
+                comprex = pprint(str(sym.Matrix([cm_val])), use_unicode=True)
+                comprex = (print('\n'))
+                # comprex = pretty_print()
+
+
+
 def  eleven():
     x, y, z = sym.symbols('x y z')
     w , t , u = sym.symbols('w, t ,u')

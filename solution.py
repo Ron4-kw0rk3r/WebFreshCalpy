@@ -87,7 +87,15 @@ def strangerman():
 
 
 def matrix():
-    pass
+    if request.method == "POST":
+        buildcm = request.form["columna"]
+        buildln = request.form["linea"]
+        chcm = request.form["matrix"]
+        for jok in range(0, 10):
+            if jok > 2:
+                note = print(f'{[jok]}', end =", ")
+        if buildcm :
+            return render_template("index.html", solvmatrix=note)
 
 
 
@@ -217,3 +225,9 @@ if __name__ == "__main__":
     main()
     acesspoint()
     # pass
+
+
+#https://coderslegacy.com/python/matrices-in-sympy/
+# https://stackoverflow.com/questions/69554191/how-to-solve-easy-matrix-equations-thanks-to-sympy-in-python
+# https://www.geeksforgeeks.org/python-sympy-matrix-method/
+# https://docs.sympy.org/latest/tutorial/intro.html
