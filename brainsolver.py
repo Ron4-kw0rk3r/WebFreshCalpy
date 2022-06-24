@@ -15,7 +15,7 @@ from sympy.parsing.sympy_parser import *
 import math
 import time
 
-# init_session()
+# init_session()x
 
 
 def banner():
@@ -51,6 +51,7 @@ def diferentials(reguet_integral) -> str:
     w , t , u = sym.symbols('w, t ,u')
     k, m , n = sym.symbols('k m n' ,integer=True)
     f, g , h = sym.symbols('f, g, h')
+    oo = sym.symbols('oo')
     sym.init_printing(True)
     sensitive = "##########################################"
     complement = pprint(str(sym.Integral(reguet_integral)), use_unicode=False)
@@ -84,6 +85,7 @@ def diclivs(reguet_declivs):
     w , t , u = sym.symbols('w, t ,u')
     k, m , n = sym.symbols('k m n' ,integer=True)
     f, g , h = sym.symbols('f, g, h')
+    oo = sym.symbols('oo')
     sym.init_printing(True)
     reincibilization = "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
     complement = pprint(str(sym.Derivative(reguet_declivs)), use_unicode=False)
@@ -105,6 +107,7 @@ def limitation(reguet_limon, reguet_val, reguet_fusse):
     w , t , u = sym.symbols('w, t ,u')
     k, m , n = sym.symbols('k m n' ,integer=True)
     f, g , h = sym.symbols('f, g, h')
+    oo = sym.symbols('oo')
     sym.init_printing(True)
     reems = "@##@#@#@#@#@#@#@#@#@#@#@#@@@#@##@##@#@#@#@#@#@"
     ument = pprint(str(sym.Limit(reguet_limon , reguet_val, reguet_fusse)), use_unicode=False)
@@ -133,6 +136,7 @@ def cmetrix(cm_line, cm_col, cm_val):
     w , t , u = sym.symbols('w, t ,u')
     k, m , n = sym.symbols('k m n' ,integer=True)
     f, g , h = sym.symbols('f, g, h')
+    oo = sym.symbols('oo')
     sym.init_printing(True)
     
     cmatr = pprint(sym.Matrix([cm_val]))
@@ -141,7 +145,7 @@ def cmetrix(cm_line, cm_col, cm_val):
         with open("fixhtml/matrix.txt", 'w') as cmati:
             cmati.write('\n')
             with redirect_stdout(cmati):
-                comprex = pprint(str(sym.Matrix([cm_val])), use_unicode=True)
+                comprex = pprint(str(sym.Matrix([str(cm_val)])), use_unicode=True)
                 comprex = (print('\n'))
                 # comprex = pretty_print()
 
@@ -151,7 +155,8 @@ def  eleven():
     x, y, z = sym.symbols('x y z')
     w , t , u = sym.symbols('w, t ,u')
     k, m , n = sym.symbols('k m n' ,integer=True)
-    f, g , h = sym.symbols('f, g, h')
+    f, g , h, o = sym.symbols('f, g, h , o')
+    oo = sym.symbols('oo')
     sym.init_printing(True)
     if  sys.argv[1] == "--mode":
         if sys.argv[2] == "--int":

@@ -5,17 +5,17 @@
 # from crypt import methods
 # from unittest import result
 # from crypt import methods
-from crypt import methods
-from operator import index
-from turtle import home
+#from crypt import methods
+#from operator import index
+#from turtle import home
 import flask
 from flask import Flask , render_template
-from flask import request, jsonify
+from flask import request
 import sys 
 import math
 import json
 #from onjson.strucs import builder 
-import strucscode
+##import strucscode
 # from strucscode 
 # import strucs
 import time
@@ -26,6 +26,7 @@ from sympy.parsing.sympy_parser import *
 from brainsolver import diferentials
 from brainsolver import diclivs
 from brainsolver import limitation
+from brainsolver import cmetrix
 # how fix import text str in parser render template host in code sussesfully
 # again imported code alll seeder 
 import os 
@@ -95,7 +96,7 @@ def matrix():
             if jok > 2:
                 note = print(f'{[jok]}', end =", ")
         if buildcm :
-            return render_template("index.html", solvmatrix=note)
+            return render_template("index.html", solvmatrix=chcm)
 
 
 

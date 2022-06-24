@@ -1,7 +1,5 @@
 
-Derivative(3*sqrt(2)*sqrt(x), x)
+Derivative(-10*x**2 + 9*x, x)
 
 
-3⋅√2
-────
-2⋅√x
+9 - 20⋅x
